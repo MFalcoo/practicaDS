@@ -22,9 +22,9 @@ public class AMainEjercicio2 {
     maBorda.setEstamina(500);
     maBorda.setPuntosDeVida(100000);
     //* elementos defensores
-    maBorda.agregarElemento(escudo);
-    maBorda.agregarElemento(espada);
-    maBorda.agregarElemento(arco);
+//    maBorda.agregarElemento(escudo);
+//    maBorda.agregarElemento(espada);
+//    maBorda.agregarElemento(arco);
 
 
     Ladron ladrILLA = new Ladron();
@@ -32,9 +32,9 @@ public class AMainEjercicio2 {
     ladrILLA.setEstamina(5);
     ladrILLA.setTieneNavaja(false);
     ladrILLA.setPuntosDeVida(-5);
-    //* elementos defensores
-    ladrILLA.agregarElemento(escudo);
-    ladrILLA.agregarElemento(espada);
+//    //* elementos defensores
+//    ladrILLA.agregarElemento(escudo);
+//    ladrILLA.agregarElemento(espada);
 
 
 
