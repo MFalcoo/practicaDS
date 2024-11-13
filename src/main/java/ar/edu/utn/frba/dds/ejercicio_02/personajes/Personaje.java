@@ -1,6 +1,7 @@
 package ar.edu.utn.frba.dds.ejercicio_02.personajes;
 
 import ar.edu.utn.frba.dds.ejercicio_02.elementos.ElementoDefensor;
+
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,23 +18,13 @@ public class Personaje {
   @GeneratedValue
   private Long id;
 
-  //NO ANDA
-//
-//  @Convert(converter = ElementosAttributeConverter.class)
-//  @ManyToMany
-//  @JoinTable(
-//          name = "personaje_elemento",
-//          joinColumns = @JoinColumn(name = "personaje_id",
-//                  referencedColumnName = "id"),
-//          inverseJoinColumns = @JoinColumn(name = "elemento_id", referencedColumnName = "id")
-//  )
-//  @Getter @Setter
-//  private List<ElementoDefensor> elementos;
-
-  @OneToMany(mappedBy = "personaje")
+  @ElementCollection
+  @CollectionTable (name = "elementos",joinColumns = @JoinColumn(name = "personaje_id"))
+  @Convert(converter = ElementosAttributeConverter.class)
   @Getter @Setter
-  private List<ElementosPersonajes> elementos;
+  private List<ElementoDefensor> elementos;
 
+  // private List<String> elementos;
 
   @Column(name = "estamina")
   @Getter @Setter
@@ -51,7 +42,7 @@ public class Personaje {
     //todo
   }
 
-  public void agregarElemento(ElementosPersonajes elemento){
+  public void agregarElemento(ElementoDefensor elemento){
     this.elementos.add(elemento);
   }
 
